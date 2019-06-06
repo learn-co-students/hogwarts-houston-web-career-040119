@@ -138,3 +138,10 @@ ul {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.myborder {
+  border-width: 2px;
+  border-style: solid;
+  padding: 20px;
+  width: 400px;
+}
