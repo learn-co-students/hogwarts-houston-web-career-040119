@@ -1,7 +1,10 @@
 import piggy from '../porco.png'
 import React from 'react'
+import FilterBar from './FilterBar';
+import HiddenPigsShowPage from './HiddenPigsShowPage';
 
-const Nav = () => {
+
+const Nav = (props) => {
 	return (
 		<div className="navWrapper">
 			<span className="headerText">Hogwarts</span>
@@ -11,6 +14,9 @@ const Nav = () => {
 				</a>
 			</div>
 			<span className="normalText">A React App for County Fair Hog Fans</span>
+		
+			<FilterBar sort={props.sort} filterByGreased={props.filterByGreased} showHiddenHogs={props.showHiddenHogs}/>
+			{props.showHiddenPigs ? <HiddenPigsShowPage hiddenPigs={props.hiddenPigs} pictures={props.pictures}/> : null}
 		</div>
 	)
 }
