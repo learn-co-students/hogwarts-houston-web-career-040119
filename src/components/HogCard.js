@@ -3,8 +3,8 @@ import HogInfo from './HogInfo'
 // import hogImgs from '../src/hog-imgs'
 
 export default class HogCard extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state={
         details: false
     }
@@ -17,11 +17,14 @@ export default class HogCard extends Component {
   }
 
   render() {
+    // let fileName = this.props.hog.name.toLowerCase().replace(/ /g, "_")
+    // let imgPath = require('../hog-imgs/' + fileName + '.jpg')
     return (
         <div className={'pigTile'}>
             <p>{this.props.hog.name}</p>
             <div>
                 <img src={`${this.props.hog.name.toLowerCase().replace(/ /g, "_")}.jpg`}/>
+                 {/*<img src={imgPath}  */}
             </div>
                 {this.state.details?<HogInfo hog={this.props.hog}/>:null}
             <div>

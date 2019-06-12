@@ -27,6 +27,8 @@ class App extends Component {
     }, this.sortedHogs)   
   }
 
+  // sortedHogs = (value) => this.state.displayHogs.sort((a,b) => a[value]<b[value]?-1:1)
+
   sortedHogs = () => {
     this.state.sort==='By Name'?
     this.setState({
@@ -51,11 +53,9 @@ class App extends Component {
 
   handleHide = (id) => {
     let newHiddenHog = this.state.displayHogs.find(hog => hog.name === id)
-    let newHogs = []
-    let newHiddenHogs = []
-    newHogs = this.state.displayHogs.filter(hog => hog.name !== id)
-    this.state.hiddenHogs.push(newHiddenHog)
-    newHiddenHogs = this.state.hiddenHogs
+    let newHogs = this.state.displayHogs.filter(hog => hog.name !== id)
+    let newHiddenHogs = this.state.hiddenHogs
+    newHiddenHogs.push(newHiddenHog)
     this.setState({
       displayHogs: newHogs,
       hiddenHogs: newHiddenHogs

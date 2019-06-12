@@ -14,8 +14,8 @@ export default class Filter extends Component {
             </div>
             <div>
                 <select onChange={(e) => this.props.handleSort(e)} className='filterWrapper'>
-                    <option>By Name</option>
-                    <option>By Weight</option>
+                    <option value='name'>By Name</option>
+                    <option value='weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'>By Weight</option>
                 </select>
             </div>
             <div>
